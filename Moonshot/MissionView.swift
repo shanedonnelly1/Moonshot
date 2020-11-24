@@ -20,7 +20,7 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
+                    Image(decorative: self.mission.image)
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
@@ -28,6 +28,7 @@ struct MissionView: View {
                     
                     Text(self.mission.formattedLaunchDate)
                         .font(.title)
+                        .accessibility(label: Text("Launch date \(self.mission.formattedLaunchDate)"))
                     
                     Text(self.mission.description)
                         .padding()

@@ -26,10 +26,12 @@ struct ContentView: View {
                         if self.isShowingLaunchDates {
                             Group {
                                 Text(mission.formattedLaunchDate)
+                                    .accessibility(hint: Text("The \(mission.displayName) mission launched on \(mission.formattedLaunchDate)"))
                             }
                         } else {
                             Group {
                                 Text(mission.crewNames)
+                                    .accessibility(hint: Text("The \(mission.displayName) mission had crew of \(mission.crewNames)"))
                             }
                         }
                     }
